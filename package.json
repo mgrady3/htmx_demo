@@ -2,7 +2,7 @@
   "name": "htmx_demo",
   "version": "1.0.0",
   "description": "",
-  "main": "backend.js",
+  "main": "./src/backend.ts",
   "scripts": {
     "build": "tsc",
     "dev": "node ./build/backend.js",

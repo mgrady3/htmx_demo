@@ -10,7 +10,9 @@ export default class Server {
     private config(app: Application): void {
         const corsOptions: CorsOptions = {
             // TODO: configure for correct port?
-            origin: "http://localhost"
+            origin: "http://localhost:9000",
+            allowedHeaders:
+        "Origin, X-Requested-With, Content-Type, Accept, Hx-Trigger, Hx-Current-Url, Hx-Request, Hx-Target",
         };
 
         app.use(cors(corsOptions));

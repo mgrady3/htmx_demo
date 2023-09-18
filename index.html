@@ -7,8 +7,15 @@
     <title>TODO</title>
 </head>
 <body>
-    <div>
-        The beginning of an app
+    <div> The Beginning of an App ...</div>
+    <div id="replaceme">
+        <button hx-post="http://localhost:9999/api/clickme"
+            hx-trigger="click"
+            hx-target="#replaceme"
+            hx-swap="outerHTML"
+        >
+        Click Me!
+        </button>
     </div>
 </body>
 </html>

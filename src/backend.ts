@@ -1,13 +1,21 @@
-import express, { Application } from "express";
-import Server from "./src/server";
+import express, { Application, Request, Response } from "express";
+import Server from "./server";
+import api_routes from "./api";
 
 import dotenv from "dotenv";
 
 dotenv.config();
 
-const app = express();
+const app: Application = express();
 const server: Server = new Server(app);
 const port: number = process.env.PORT ? parseInt(process.env.PORT, 10) : 9999;
+
+
+app.get('/', (req: Request, res: Response) => {
+  res.send('Default GET response')
+});
+
+app.use('/api', api_routes);
 
 app
   .listen(port, "localhost", () => {
